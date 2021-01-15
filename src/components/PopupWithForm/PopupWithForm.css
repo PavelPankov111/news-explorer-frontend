@@ -1,0 +1,417 @@
+.popup {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: rgba(0, 0, 0, 0);
+    position: fixed;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+    transition: all 0.5s;
+}
+
+.popup_opened {
+    display: flex;
+    position: fixed;
+    background: rgba(0, 0, 0, .6);
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.popup-auth__form {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    width: 430px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6%;
+    position: relative;
+}
+
+.popup__close-btn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    padding: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.01);
+    border: none;
+    outline: none
+}
+
+.popup-auth__content {
+    width: 358px;
+    height: 318px;
+}
+
+.popup-auth__button {
+    background: #2F71E5;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    border-radius: 100px;
+    width: 360px;
+    height: 64px;
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}
+
+.popup-auth__button-disable {
+    background: #E6E8EB;
+    cursor: auto;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.popup-auth__title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 29px;
+}
+
+.popup__close-img {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.popup__close-img:hover {
+    opacity: .6;
+    transition: .2s;
+}
+
+.popup-auth__email-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 10px;
+}
+
+.popup-auth__email {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.popup-auth__password-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 7px;
+}
+
+.popup-auth__password {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding-bottom: 6px;
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.popup-auth__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 21px;
+}
+
+.popup-auth__author {
+    display: flex;
+    margin-top: 16px;
+}
+
+.popup-auth__or {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    margin: auto;
+}
+
+.popup-auth__route {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #2F71E5;
+    text-decoration: none;
+    margin-left: 0px;
+}
+
+.popup-auth__email-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 16px;
+}
+
+.popup-auth__password-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+}
+
+.popup-register__form {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    width: 430px;
+    height: 458px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6%;
+    position: relative;
+}
+
+.popup-register__content {
+    width: 358px;
+    height: 396px;
+}
+
+.popup-register__button {
+    background: #2F71E5;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    border-radius: 100px;
+    width: 360px;
+    height: 64px;
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}
+
+.popup-register__button-disable {
+    background: #E6E8EB;
+    cursor: auto;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.popup-register__title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 29px;
+}
+
+.popup-register__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.popup-register__email-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 10px;
+}
+
+.popup-register__email {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    opacity: 0.2;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+}
+
+.popup-register__email-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 13px;
+}
+
+.popup-register__password-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 7px;
+}
+
+.popup-register__password {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    opacity: 0.2;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+}
+
+.popup-register__password-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 16px;
+}
+
+.popup-register__name-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 10px;
+}
+
+.popup-register__name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    opacity: 0.2;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+}
+
+.popup-register__name-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 22px;
+}
+
+.popup-register__author {
+    display: flex;
+    margin-top: 16px;
+}
+
+.popup-register__or {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    margin: auto;
+}
+
+.popup-register__route {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #2F71E5;
+    text-decoration: none;
+    margin-left: 0px;
+}
+
+.popup-successful__form{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    width: 430px;
+    height: 182px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6%;
+    position: relative;
+}
+
+.popup-successful__title{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 9px;
+    color: #000000;
+}
+
+.popup-successful__content{
+    width: 315px;
+    height: 88px;
+    margin-left: -41px;
+}
+
+.popup-successful__route{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2F71E5;
+    text-decoration: none;
+}

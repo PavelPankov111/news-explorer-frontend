@@ -1,0 +1,64 @@
+.footer {
+    padding-right: 104px;
+    padding-left: 104px;
+    margin-top: 104px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #B6BCBF;
+    margin-top: 10px;
+}
+
+.footer__link {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 7px;
+}
+
+.footer__route {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    cursor: pointer;
+    text-decoration: none;
+    margin: auto;
+    margin-right: 38px;
+    margin-top: 7px;
+}
+
+.footer__box {
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.footer__git {
+    background-image: url(../../images/git.svg);
+    width: 21px;
+    height: 20px;
+    margin-left: 62px;
+    margin-top: -10px;
+}
+
+.footer__fb {
+    background-image: url(../../images/fb.svg);
+    width: 20px;
+    height: 20px;
+    margin-left: 29px;
+    margin-top: -10px;
+}
