@@ -176,7 +176,13 @@
     text-align: center;
     color: #2F71E5;
     text-decoration: none;
-    margin-left: 0px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.popup-auth__route:hover{
+    opacity: .8;
+    transition: .2s;
 }
 
 .popup-auth__email-error {
@@ -269,12 +275,12 @@
     line-height: 17px;
     color: #000000;
     border: none;
-    opacity: 0.2;
     padding-bottom: 3px;
     border-bottom: 1px solid rgba(0,0,0,.2);
     padding-left: 0;
     width: 358px;
     margin-bottom: 2px;
+    outline: none;
 }
 
 .popup-register__email-error {
@@ -302,12 +308,12 @@
     line-height: 17px;
     color: #000000;
     border: none;
-    opacity: 0.2;
     padding-bottom: 3px;
     border-bottom: 1px solid rgba(0,0,0,.2);
     padding-left: 0;
     width: 358px;
     margin-bottom: 2px;
+    outline: none;
 }
 
 .popup-register__password-error {
@@ -335,12 +341,12 @@
     line-height: 17px;
     color: #000000;
     border: none;
-    opacity: 0.2;
     padding-bottom: 3px;
     border-bottom: 1px solid rgba(0,0,0,.2);
     padding-left: 0;
     width: 358px;
     margin-bottom: 2px;
+    outline: none;
 }
 
 .popup-register__name-error {
@@ -375,7 +381,13 @@
     text-align: center;
     color: #2F71E5;
     text-decoration: none;
-    margin-left: 0px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.popup-register__route:hover{
+    opacity: .8;
+    transition: .2s;
 }
 
 .popup-successful__form{
@@ -414,4 +426,10 @@
     line-height: 22px;
     color: #2F71E5;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-successful__route:hover{
+    opacity: .8;
+    transition: .2s;
 }

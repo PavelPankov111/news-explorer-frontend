@@ -1,0 +1,126 @@
+.newsCard {
+    width: 400px;
+    height: 576px;
+    border-radius: 4%;
+    overflow: hidden;
+    background-color: white;
+}
+
+.newsCard__image {
+    width: 400px;
+    height: 272px;
+    background-image: url(../../images/image_08.jpg);
+    position: relative;
+}
+
+.newsCard__button {
+    background: #FFFFFF;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+}
+
+.newsCard__button-img {
+    background-image: url(../../images/Rectangle8.svg);
+    width: 14px;
+    height: 19px;
+    background-repeat: no-repeat;
+    margin-top: 11px;
+    margin-left: 13px;
+}
+
+.newsCard__button-img_hover {
+    background-image: url(../../images/hov.svg);
+}
+
+.newsCard__button-hover {
+    width: 182px;
+    height: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+    border-radius: 10px;
+    position: absolute;
+    top: 24px;
+    right: 72px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    border-radius: 10px;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.newsCard__hover_active {
+    visibility: visible;
+}
+
+.newsCard__content {
+    width: 352px;
+    margin: auto;
+    height: 260px;
+}
+
+.newsCard__content-date {
+    max-width: 128px;
+    min-width: 128px;
+    max-height: 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.newsCard__content-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    color: #1A1B22;
+    max-width: 352px;
+    min-width: 352px;
+    max-height: 90px;
+    text-overflow: ellipsis;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.newsCard__content-description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1A1B22;
+    margin-top: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 352px;
+    max-height: 110px;
+}
+
+.newsCard__content__author {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    max-width: 352px;
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
