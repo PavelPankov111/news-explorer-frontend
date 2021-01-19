@@ -1,6 +1,6 @@
-.page{
+.page {
     font-family: 'Roboto', 'Arial', sans-serif;
-    margin:auto;
+    margin: auto;
     max-width: 1440px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -8,4 +8,4 @@
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
-    }
+}

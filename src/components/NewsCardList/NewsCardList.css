@@ -5,6 +5,10 @@
     flex-direction: column;
 }
 
+.newsCardList_disable {
+    display: none;
+}
+
 .newsCardList__title {
     font-style: normal;
     font-weight: normal;
@@ -25,6 +29,8 @@
     max-width: 1232px;
     margin-top: 64px;
     margin: auto;
+    grid-row-gap: 16px;
+    margin-bottom: 64px;
     margin-top: 64px;
 }
 
@@ -34,7 +40,6 @@
     border-radius: 80px;
     width: 288px;
     height: 64px;
-    margin-top: 64px;
     margin-bottom: 80px;
     font-style: normal;
     font-weight: 500;
@@ -44,9 +49,9 @@
     outline: none;
     border: none;
     cursor: pointer;
+    transition: .1s;
 }
 
-.newsCardList__button:hover{
-    opacity: .9;
-    transition: .2s;
+.newsCardList__button:hover {
+    box-shadow: 0 4px 6px -7px rgba(20, 17, 17, 0.1), 0 4px 30px -9px rgba(0,0,0,.1);
 }
