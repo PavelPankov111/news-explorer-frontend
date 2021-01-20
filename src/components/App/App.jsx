@@ -53,7 +53,7 @@ function App() {
     }
 
     React.useEffect(() => {
-        if (authPopupState || registerPopupState) {
+        if (authPopupState || registerPopupState || successfulPopupState) {
             if (burger !== null) {
                 burger.classList.add('header__mobile-popup_hidden')
             }
@@ -91,23 +91,23 @@ function App() {
                 <PopupWithForm onClickRoute={handleRegisterPopupOpen} close={handleClose} showBtn={true} showOr={true} isOpen={authPopupState} namePopup="-auth" title="Вход" titleButton="Войти" nameRoute="Зарегестрироваться">
                     <div className="popup-auth__box">
                         <span className="popup-auth__email-name">Email</span>
-                        <input placeholder="Введите почту" className="popup__input popup-auth__email" type="email" />
+                        <input placeholder="Введите почту" className="popup__input popup-auth__email" type="email" required/>
                         <span className="popup-auth__email-error">Неправильный формат email</span>
                         <span className="popup-auth__password-name">Пароль</span>
-                        <input className="popup__input popup-auth__password" placeholder="Введите пароль" type="password" />
+                        <input className="popup__input popup-auth__password" placeholder="Введите пароль" type="password" required/>
                         <span className="popup-auth__password-error">1111111</span>
                     </div>
                 </PopupWithForm>
                 <PopupWithForm onClickRoute={handleRegisterRote} close={handleClose} showBtn={true} showOr={true} isOpen={registerPopupState} namePopup="-register" title="Регистрация" titleButton="Зарегестрироваться" nameRoute="Войти">
                     <div className="popup-register__box">
                         <span className="popup-register__email-name">Email</span>
-                        <input placeholder="Введите почту" className="popup__input popup-register__email" type="email" />
+                        <input placeholder="Введите почту" className="popup__input popup-register__email" type="email" required />
                         <span className="popup-register__email-error">Неправильный формат email</span>
                         <span className="popup-register__password-name">Пароль</span>
-                        <input className="popup__input popup-register__password" placeholder="Введите пароль" type="password" />
+                        <input className="popup__input popup-register__password" placeholder="Введите пароль" type="password" required/>
                         <span className="popup-register__password-error">1111111</span>
                         <span className="popup-register__name-name">Имя</span>
-                        <input className="popup__input popup-register__name" placeholder="Введите своё имя" type="text" minLength="2" maxLength="30" />
+                        <input className="popup__input popup-register__name" placeholder="Введите своё имя" type="text" minLength="2" maxLength="30" required/>
                         <span className="popup-register__name-error">1111111</span>
                     </div>
                     <span className="popup-register__submit-error">Такой пользователь уже есть</span>
