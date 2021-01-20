@@ -58,6 +58,7 @@
     color: #1A1B22;
     display: flex;
     margin-top: 0;
+    margin-bottom: 36px;
 }
 
 .main__sawed-news-subtitle {
@@ -113,4 +114,108 @@
     justify-content: flex-start;
     padding-top: 40px;
     padding-left: 104px;
+}
+
+@media screen and (max-width: 768px) {
+    .main__title {
+        font-size: 36px;
+        line-height: 40px;
+        width: 399px;
+        margin-top: 105px;
+        margin-left: 165px;
+    }
+    .main__description {
+        width: 415px;
+        margin-top: 18px;
+    }
+    .main {
+        height: 400px;
+        margin-top: -68px;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .main__title {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main__sawed-news-subtitle {
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(26, 27, 34, 0.5);
+        margin-bottom: 8px;
+    }
+    .main__title-sawed-news {
+        font-size: 30px;
+        line-height: 34px;
+        width: 314px;
+        margin-bottom: 15px;
+    }
+    .main__description-sawed-news {
+        font-size: 14px;
+    }
+    .main__found-article {
+        font-size: 14px;
+        margin-bottom: 19px;
+    }
+    .main__and {
+        font-size: 14px;
+    }
+    .main__page-sawed-news {
+        padding-top: 23px;
+        padding-left: 43px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        height: 536px;
+    }
+    .main__title {
+        width: 288px;
+        margin-top: 96px;
+    }
+    .main__description {
+        width: 288px;
+        margin-bottom: 112px;
+    }
+    .main__sawed-news-subtitle {
+        font-size: 12px;
+        line-height: 24px;
+        margin: 15px auto;
+    }
+    .main__title-sawed-news {
+        width: 261px;
+        text-align: center;
+        margin: auto auto 15px auto;
+    }
+    .main__sawed-news-box {
+        max-width: 288px;
+        text-align: center;
+    }
+    .main__description-sawed-news {
+        width: 221px;
+    }
+    .main__and {
+        margin: 0;
+    }
+    .main__page-sawed-news {
+        max-width: 288px;
+        padding: 0;
+        margin: auto;
+    }
+    .main__found-article {
+        text-align: revert;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .main__description {
+        width: 275px;
+    }
+    .main__title {
+        width: 275px;
+    }
 }

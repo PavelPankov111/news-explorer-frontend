@@ -11,10 +11,10 @@ function Navigation(props) {
                 <div className="navigation__descriptions-sawed-news">
                     <Link to="/" className="navigation__main-page">Главная</Link>
                     <Link to="/sawed-news" onClick={props.redirectSawedNews} className="navigation__sawed-news">Сохранённые статьи</Link>
-                    <div className="navigation__sawed-box-light navigation__sawed-box">
+                    <Link to="/" onClick={props.click} className="navigation__sawed-box-light navigation__sawed-box">
                         <p className="navigation__sawed-exit_light navigation__sawed-exit">{props.userName}</p>
                         <img className="navigation__sawed-image" src={iconc} alt="кнопка выхода" />
-                    </div>
+                    </Link>
                 </div>
                 :
                 <div className="navigation__descriptions">
@@ -26,10 +26,10 @@ function Navigation(props) {
             <div className="navigation__descriptions-sawed-news">
                 <Link to="/" className="navigation__main-page_active">Главная</Link>
                 <Link to="/sawed-news" onClick={props.redirectSawedNews} className="navigation__sawed-news_active">Сохранённые статьи</Link>
-                <div className="navigation__sawed-box">
+                <Link to="/" onClick={props.click} className="navigation__sawed-box">
                     <p className="navigation__sawed-exit">{props.userName}</p>
                     <img className="navigation__sawed-image" src={iconcSawedNews} alt="кнопка выхода" />
-                </div>
+                </Link>
             </div>
         </Route>
     </Switch>

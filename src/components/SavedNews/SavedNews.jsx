@@ -6,11 +6,11 @@ function SavedNews(props) {
     return (
         <section className={props.isLoadind ? `newsCardList newsCardList_disable` : `newsCardList`}>
             <div className="newsCardList__items">
-                <NewsCard isLoggedIn={false} />
-                <NewsCard isLoggedIn={false} />
-                <NewsCard isLoggedIn={false} />
-                <NewsCard isLoggedIn={false} />
-                <NewsCard isLoggedIn={false} />
+                <NewsCard />
+                <NewsCard />
+                <NewsCard />
+                <NewsCard />
+                <NewsCard />
             </div>
         </section>
     )

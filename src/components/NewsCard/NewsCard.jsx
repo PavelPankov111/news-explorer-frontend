@@ -38,7 +38,7 @@ function NewsCard(props) {
                         }
                     </Route>
                     <Route path="/sawed-news">
-                        <div className="newsCard__sawed-news-subtitle">Фотография111111111111</div>
+                        <div className="newsCard__sawed-news-subtitle">Фотография</div>
                         <div onPointerLeave={handleIsHoverClose} onPointerMove={handleIsHover} className="newsCard__button">
                             <div className={isHoverBtn ? `newsCard__button-img-sawed-news newsCard__button-img newsCard__button-img_hover newsCard__button-img_hover-sawed-news` : `newsCard__button-img-sawed-news newsCard__button-img`} />
                             <div className={isHover ? `newsCard__button-hover-sawed-news newsCard__button-hover newsCard__hover_active` : `newsCard__button-hover-sawed-news newsCard__button-hover`}>Убрать из сохранённых</div>

@@ -11,17 +11,14 @@
     z-index: 5;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.5s, opacity 0.5s linear;
-    transition: all 0.5s;
 }
 
 .popup_opened {
     display: flex;
     position: fixed;
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, .5);
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.5s;
 }
 
 .popup-auth__form {
@@ -114,7 +111,7 @@
     color: #000000;
     border: none;
     padding-bottom: 3px;
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
     padding-left: 0;
     width: 358px;
     margin-bottom: 2px;
@@ -137,7 +134,7 @@
     line-height: 17px;
     color: #000000;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
     padding-bottom: 6px;
     padding-left: 0;
     width: 358px;
@@ -180,7 +177,7 @@
     cursor: pointer;
 }
 
-.popup-auth__route:hover{
+.popup-auth__route:hover {
     opacity: .8;
     transition: .2s;
 }
@@ -276,7 +273,7 @@
     color: #000000;
     border: none;
     padding-bottom: 3px;
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
     padding-left: 0;
     width: 358px;
     margin-bottom: 2px;
@@ -309,7 +306,7 @@
     color: #000000;
     border: none;
     padding-bottom: 3px;
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
     padding-left: 0;
     width: 358px;
     margin-bottom: 2px;
@@ -342,7 +339,7 @@
     color: #000000;
     border: none;
     padding-bottom: 3px;
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
     padding-left: 0;
     width: 358px;
     margin-bottom: 2px;
@@ -355,7 +352,7 @@
     font-size: 12px;
     line-height: 15px;
     color: #FF0000;
-    margin-bottom: 22px;
+    margin-bottom: 17px;
 }
 
 .popup-register__author {
@@ -385,12 +382,12 @@
     cursor: pointer;
 }
 
-.popup-register__route:hover{
+.popup-register__route:hover {
     opacity: .8;
     transition: .2s;
 }
 
-.popup-successful__form{
+.popup-successful__form {
     background: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 16px;
@@ -403,7 +400,7 @@
     position: relative;
 }
 
-.popup-successful__title{
+.popup-successful__title {
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
@@ -413,13 +410,13 @@
     color: #000000;
 }
 
-.popup-successful__content{
+.popup-successful__content {
     width: 315px;
     height: 88px;
     margin-left: -41px;
 }
 
-.popup-successful__route{
+.popup-successful__route {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -429,7 +426,93 @@
     cursor: pointer;
 }
 
-.popup-successful__route:hover{
+.popup-successful__route:hover {
     opacity: .8;
     transition: .2s;
+}
+
+.popup__input {}
+
+.popup__input:focus {
+    border-bottom: 1px solid black;
+}
+
+.popup-register__submit-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 550px) {
+    .popup_opened {
+        bottom: -425px;
+    }
+    .popup__close-btn {
+        top: -50px;
+        right: -6px;
+    }
+    .popup-auth__form {
+        width: 100%;
+        height: 560px;
+    }
+    .popup-register__form {
+        width: 100%;
+        height: 560px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .popup-auth__form {
+        height: 104.7%;
+    }
+    .popup_opened {
+        background: rgba(0, 0, 0, 0);
+    }
+    .popup-auth__content {
+        margin-bottom: 345%;
+        width: 288px;
+    }
+    .popup__close-img {
+        width: 24px;
+        height: 24px;
+    }
+    .popup__input {
+        width: 286px;
+    }
+    .popup-auth__button {
+        width: 288px;
+    }
+    .popup-auth__button-disable {
+        width: 288px;
+    }
+    .popup__close-btn {
+        top: -49px;
+        right: 4px;
+    }
+    .popup-register__form {
+        height: 105%;
+    }
+    .popup-register__content {
+        width: 288px;
+        height: 396px;
+        margin-bottom: 345%;
+    }
+    .popup-register__button-disable {
+        width: 288px;
+    }
+    .popup-register__button {
+        width: 288px;
+    }
+    .popup-auth__title {
+        margin-bottom: 15px;
+    }
+    .popup-auth__box {
+        margin-bottom: 2px;
+    }
 }

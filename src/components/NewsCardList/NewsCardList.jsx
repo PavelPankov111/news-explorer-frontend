@@ -7,9 +7,9 @@ function NewsCardList(props) {
         <section className={props.isLoadind ? `newsCardList newsCardList_disable` : `newsCardList`}>
             <h2 className="newsCardList__title">Результаты поиска</h2>
             <div className="newsCardList__items">
-                <NewsCard isLoggedIn={false}/>
-                <NewsCard isLoggedIn={false}/>
-                <NewsCard isLoggedIn={false}/>
+                <NewsCard isLoggedIn={props.isLoggedIn}/>
+                <NewsCard isLoggedIn={props.isLoggedIn}/>
+                <NewsCard isLoggedIn={props.isLoggedIn}/>
             </div>
         <button className="newsCardList__button">
             Показать еще

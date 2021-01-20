@@ -1,7 +1,7 @@
 .newsCard {
     width: 400px;
     height: 576px;
-    border-radius: 4%;
+    border-radius: 16px;
     overflow: hidden;
     background-color: white;
     cursor: pointer;
@@ -88,6 +88,7 @@
 }
 
 .newsCard__content-date {
+    font-family: 'Source Sans Pro';
     max-width: 128px;
     min-width: 128px;
     max-height: 24px;
@@ -111,6 +112,7 @@
     max-height: 90px;
     text-overflow: ellipsis;
     margin-top: 12px;
+    margin-bottom: 14px;
     overflow: hidden;
 }
 
@@ -124,6 +126,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 352px;
+    margin-top: 0;
     max-height: 110px;
 }
 
@@ -185,4 +188,86 @@
     vertical-align: middle;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+@media screen and (max-width: 867px) {
+    .newsCard {
+        width: 224px;
+        height: 420px;
+    }
+    .newsCard__image {
+        width: 224px;
+        height: 150px;
+    }
+    .newsCard__content-date {
+        max-width: 192px;
+        margin: 16px auto 0 auto;
+    }
+    .newsCard__content-title {
+        max-width: 192px;
+        min-width: 192px;
+        max-height: 72px;
+        font-size: 22px;
+        line-height: 24px;
+        margin-bottom: 10px;
+        margin-top: 14px;
+    }
+    .newsCard__content-description {
+        max-width: 192px;
+        max-height: 88px;
+        margin-bottom: 0;
+    }
+    .newsCard__content {
+        width: 192px;
+    }
+    .newsCard__content__author {
+        margin-top: 10px;
+    }
+    .newsCard__button {
+        right: 9px;
+        top: 9px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .newsCard__button-hover {
+        width: 115px;
+    }
+    .newsCard__sawed-news-subtitle {
+        top: 9px;
+        left: 9px;
+    }
+    .newsCard__button-hover-sawed-news {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .newsCard {
+        width: 288px;
+        height: 440px;
+    }
+    .newsCard__image {
+        width: 288px;
+        height: 196px;
+    }
+    .newsCard__content {
+        width: 256px;
+        height: 212px;
+    }
+    .newsCard__content-title {
+        max-width: 214px;
+    }
+    .newsCard__content-date {
+        margin: 16px auto 0 0;
+    }
+    .newsCard__button {
+        right: 15px;
+        top: 18px;
+    }
+    .newsCardList__button {
+        width: 288px;
+        height: 56px;
+        margin-bottom: 32px;
+    }
 }
