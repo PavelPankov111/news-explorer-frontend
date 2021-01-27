@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.c12b9b09.chunk.css",
-    "main.js": "/static/js/main.f47d151a.chunk.js",
-    "main.js.map": "/static/js/main.f47d151a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3a1c6e8d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3a1c6e8d.js.map",
-    "static/js/2.a86ab3cc.chunk.js": "/static/js/2.a86ab3cc.chunk.js",
-    "static/js/2.a86ab3cc.chunk.js.map": "/static/js/2.a86ab3cc.chunk.js.map",
+    "main.js": "/static/js/main.05afd638.chunk.js",
+    "main.js.map": "/static/js/main.05afd638.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.feee4c18.js",
+    "runtime-main.js.map": "/static/js/runtime-main.feee4c18.js.map",
+    "static/js/2.090b400a.chunk.js": "/static/js/2.090b400a.chunk.js",
+    "static/js/2.090b400a.chunk.js.map": "/static/js/2.090b400a.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.c12b9b09.chunk.css.map": "/static/css/main.c12b9b09.chunk.css.map",
-    "static/js/2.a86ab3cc.chunk.js.LICENSE.txt": "/static/js/2.a86ab3cc.chunk.js.LICENSE.txt",
+    "static/js/2.090b400a.chunk.js.LICENSE.txt": "/static/js/2.090b400a.chunk.js.LICENSE.txt",
     "static/media/NewsCard.css": "/static/media/trashHover.b9abe9fb.svg",
     "static/media/roboto.css": "/static/media/Robotothinitalic.d8ab3401.woff2",
     "static/media/robotoslab.css": "/static/media/Robotoslabthin.a6759bb9.woff2",
@@ -24,9 +24,9 @@
     "static/media/Main.css": "/static/media/telephonee.f4daa4c2.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3a1c6e8d.js",
-    "static/js/2.a86ab3cc.chunk.js",
+    "static/js/runtime-main.feee4c18.js",
+    "static/js/2.090b400a.chunk.js",
     "static/css/main.c12b9b09.chunk.css",
-    "static/js/main.f47d151a.chunk.js"
+    "static/js/main.05afd638.chunk.js"
   ]
 }
