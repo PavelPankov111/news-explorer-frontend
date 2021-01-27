@@ -10,7 +10,6 @@ function NewsCard(props) {
     const [isClickBtn, setIsClickBtn] = React.useState(false)
     const mainApi = new MainApi()
 
-
     function handleIsHover() {
         setIsHover(true)
         setIsHoverBtn(true)
@@ -28,7 +27,9 @@ function NewsCard(props) {
             props.update()
         } else {
             setIsClickBtn(true)
-            mainApi.addingCard(props.keyword, props.title, props.description, props.source, props.urlCard, props.imageCard, props.date)
+            console.log(localStorage.getItem('keyword'))
+            const keyword = props.keyword ? props.keyword : localStorage.getItem('keyword')
+            mainApi.addingCard(keyword, props.title, props.description, props.source, props.urlCard, props.imageCard, props.date)
                 .then((res) => {
                     console.log(res)
                 })
@@ -80,7 +81,7 @@ function NewsCard(props) {
                             {isClickBtn ? <button className='newsCard__button-img newsCard__button-img_click' /> : <button className={isHoverBtn ? `newsCard__button-img newsCard__button-img_hover` : `newsCard__button-img`} />}
                         </button>
                         :
-                        <button onPointerLeave={handleIsHoverClose} onPointerMove={handleIsHover} className="newsCard__button">
+                        <button onClick={props.notLeggedIn} onPointerLeave={handleIsHoverClose} onPointerMove={handleIsHover} className="newsCard__button">
                             <div className={isHoverBtn ? `newsCard__button-img newsCard__button-img_hover` : `newsCard__button-img`} />
                             <div className={isHover ? `newsCard__button-hover newsCard__hover_active` : `newsCard__button-hover`}>Войдите, чтобы сохранять статьи</div>
                         </button>

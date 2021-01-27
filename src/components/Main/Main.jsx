@@ -7,13 +7,14 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 function Main(props) {
     const arrKeywords = props.sawedNews.map(card => card = card.keyword);
     const keywords = [...new Set(arrKeywords)];
+    const [numberSawedNews, setNumberSawedNews] = React.useState(0)
 
     const sawedArticlesNumber = () => {
-        if (props.numberSawedNews >= 5 || props.numberSawedNews === 0) {
+        if (numberSawedNews >= 5 || numberSawedNews === 0) {
             return 'сохраненных статей';
-          } else if (props.numberSawedNews > 1 && props.numberSawedNews < 5) {
+          } else if (numberSawedNews > 1 && numberSawedNews < 5) {
             return 'сохраненные статьи';
-          } else if (props.numberSawedNews === 1) {
+          } else if (numberSawedNews === 1) {
             return 'сохраненная статья';
           }
     }
@@ -47,6 +48,11 @@ function Main(props) {
         }
     }
 
+    React.useEffect(() => {
+        console.log(props.numberSawedNews)
+        setNumberSawedNews(props.numberSawedNews)
+    }, [props.loggedIn, props.numberSawedNews])
+
     return <Switch>
         <Route path="/" exact>
             <main className="main">
@@ -62,8 +68,8 @@ function Main(props) {
             <main className="main__sawed-news">
                 <div className="main__page-sawed-news">
                     <h3 className="main__sawed-news-subtitle">Сохранённые статьи</h3>
-                    <h2 className="main__title-sawed-news">{`${props.userName}, у вас ${props.numberSawedNews} ${sawedArticlesNumber()}`}</h2>
-                    <div className={props.numberSawedNews > 0 ? `main__sawed-news-box main__sawed-news-box_visible` : `main__sawed-news-box`}>
+                    <h2 className="main__title-sawed-news">{`${props.userName}, у вас ${numberSawedNews} ${sawedArticlesNumber()}`}</h2>
+                    <div className={numberSawedNews > 0 ? `main__sawed-news-box main__sawed-news-box_visible` : `main__sawed-news-box`}>
                         <p className="main__description-sawed-news">{sawedArticleText()}</p>
                         <p className="main__found-article">{keywords.length > 1 ? `${oneKeyword}, ${twoKeyword}` : `${oneKeyword}`}<p className="main__and">{keywords.length > 2 ? 'и' : ''}</p>{keywords.length > 2 ? `${keyNumber}${keyDescription()}` : ''}</p>
                     </div>

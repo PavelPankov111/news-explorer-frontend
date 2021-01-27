@@ -5,7 +5,7 @@ function ProtectedRoute({ children, ...props }) {
     if (props.loggedIn) {
         return <Route {...props}>{children}</Route>
     } else {
-        return <Redirect to='./' />
+        return <Redirect to='/' />
     }
 }
 
