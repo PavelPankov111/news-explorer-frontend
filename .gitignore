@@ -8,6 +8,10 @@ npm-debug.log*
 # Dependency directory
 node_modules
 
+.eslintcache
+
+.env
+
 # Optional npm cache directory
 .npm
 
