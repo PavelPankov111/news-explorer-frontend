@@ -349,14 +349,14 @@ function App() {
     }
 
     function getSawedCards() {
-        if(isLoggedInHeader){
+        if (isLoggedInHeader) {
             mainApi.getCards()
-            .then((cards) => {
-                setSawedCards(cards)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+                .then((cards) => {
+                    setSawedCards(cards)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
         }
     }
 
@@ -393,19 +393,20 @@ function App() {
     }, [isLoggedInHeader])
 
     return <Switch>
-        <Route path="*">
-        <CurrentUserContext.Provider value={currentUser}>
-            {renderPage ?
+        <Route exact path="*">
+            <CurrentUserContext.Provider value={currentUser}>
                 <section className="page">
-                    <ProtectedRoute path="/sawed-news" loggedIn={isLoggedInHeader}>
-                        <SavedNewsHeader onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
-                        <Main sawedNews={sawedCards} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
-                        {sawedCards.length === 0 ?
-                            <NotFound noSawedCards={true} isVisible={true} />
-                            :
-                            <SavedNews removeCard={handleRemoveCard} keyword={keyword} cards={sawedCards} isLoggedIn={isLoggedInHeader} />
-                        }
-                    </ProtectedRoute>
+                    {renderPage ?
+                        <ProtectedRoute path="/sawed-news" loggedIn={isLoggedInHeader}>
+                            <SavedNewsHeader onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
+                            <Main sawedNews={sawedCards} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
+                            {sawedCards.length === 0 ?
+                                <NotFound noSawedCards={true} isVisible={true} />
+                                :
+                                <SavedNews removeCard={handleRemoveCard} keyword={keyword} cards={sawedCards} isLoggedIn={isLoggedInHeader} />
+                            }
+                        </ProtectedRoute>
+                        : ''}
                     <Route path="/" exact>
                         <Header handleClick={handleClick} isClicked={isClicked} onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
                         <Main sawedNews={sawedCards} errorInputSearch={errorInputSearch} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
@@ -442,8 +443,7 @@ function App() {
                     <PopupWithForm close={handleClose} routeClick={handleSuccessfulPopupState} showBtn={false} showOr={false} isOpen={successfulPopupState} namePopup="-successful" title="Пользователь успешно зарегистрирован!" nameRoute="Войти" />
                     <Footer />
                 </section>
-                : ''}
-        </CurrentUserContext.Provider>
+            </CurrentUserContext.Provider>
         </Route>
     </Switch>
 
