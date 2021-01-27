@@ -19,6 +19,9 @@ function PopupWithForm(props) {
         }
 
         document.addEventListener('keyup', handleCloseEsc)
+        return () => {
+            document.removeEventListener('keyup', handleCloseEsc)
+        }
     })
 
     return (

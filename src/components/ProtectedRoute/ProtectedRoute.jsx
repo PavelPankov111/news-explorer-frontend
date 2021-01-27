@@ -7,6 +7,7 @@ function ProtectedRoute({ children, ...props }) {
     } else {
         return <Redirect to='/' />
     }
+
 }
 
 export default ProtectedRoute;

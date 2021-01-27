@@ -8,7 +8,6 @@ function NewsCardList(props) {
     const [showBtn, setShowBtn] = React.useState(false)
 
     React.useEffect(() => {
-        console.log(cards)
         setArticles(cards.slice(0, 3))
         if (cards.length > 3) {
             setShowBtn(true)

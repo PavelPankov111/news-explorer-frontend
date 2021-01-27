@@ -17,7 +17,7 @@ function Header(props) {
                             <div className="header__mobile-content">
                                 <Link className="header__mobile-main-page" to="/">Главная</Link>
                                 {props.loggedInHeader ?
-                                    <Link className="header__mobile-sawed-news" to="/sawed-news">Сохраненные статьи</Link>
+                                    <Link onClick={props.clickSawedNews} className="header__mobile-sawed-news" to="/sawed-news">Сохраненные статьи</Link>
                                     : ''}
                                 {props.loggedInHeader ?
                                     <Link to="/" onClick={props.onClickOut} className="navigation__sawed-box-light navigation__sawed-box">

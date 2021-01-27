@@ -27,7 +27,6 @@ function NewsCard(props) {
             props.update()
         } else {
             setIsClickBtn(true)
-            console.log(localStorage.getItem('keyword'))
             const keyword = props.keyword ? props.keyword : localStorage.getItem('keyword')
             mainApi.addingCard(keyword, props.title, props.description, props.source, props.urlCard, props.imageCard, props.date)
                 .then((res) => {
@@ -63,6 +62,7 @@ function NewsCard(props) {
 
     function deleteSawedCard(){
         props.removeCard(props.article, props.sawedArticle)
+        props.update()
     }
 
     React.useEffect(() => {
@@ -70,7 +70,7 @@ function NewsCard(props) {
             const wasSawedArticle = props.sawedNews.find((c) => c.title === props.title)
             wasSawedArticle ? setIsClickBtn(true) : setIsClickBtn(false)
         }
-    }, [props.sawedNews])
+    }, [props.sawedNews, props.title])
 
     return <Switch>
         <Route path="*" exact>

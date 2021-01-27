@@ -49,7 +49,6 @@ function Main(props) {
     }
 
     React.useEffect(() => {
-        console.log(props.numberSawedNews)
         setNumberSawedNews(props.numberSawedNews)
     }, [props.loggedIn, props.numberSawedNews])
 

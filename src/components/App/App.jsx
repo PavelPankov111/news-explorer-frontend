@@ -26,6 +26,16 @@ function App() {
     const [sawedCards, setSawedCards] = React.useState([])
     const [numberSawedNews, setNumberSawedNews] = React.useState(0)
 
+    const getSawedCards = () => {
+        mainApi.getCards()
+            .then((cards) => {
+                setSawedCards(cards)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
     React.useEffect(() => {
         if (localStorage.getItem('jwt')) {
             setIsLoggedInHeader(true)
@@ -47,7 +57,6 @@ function App() {
 
         setRenderPage(true)
         if (localStorage.getItem('articles')) {
-            console.log(JSON.parse(localStorage.getItem('articles')))
             setCards(JSON.parse(localStorage.getItem('articles')))
             setStateNewsCardList(false)
         } else {
@@ -55,14 +64,14 @@ function App() {
             setStateNewsCardList(true)
         }
 
-        getSawedCards()
-        setNumberSawedNews(sawedCards.length)
     }, [isLoggedInHeader])
 
     React.useEffect(() => {
-        getSawedCards()
-        setNumberSawedNews(sawedCards.length)
-    }, [sawedCards])
+        if (isLoggedInHeader) {
+            getSawedCards()
+            setNumberSawedNews(sawedCards.length)
+        }
+    }, [isLoggedInHeader, sawedCards.length])
 
     const regExpEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/
 
@@ -299,6 +308,7 @@ function App() {
             setStateNewsCardList(true)
             news.request(value)
                 .then((cards) => {
+                    console.log(cards)
                     localStorage.setItem('keyword', value)
                     localStorage.setItem('articles', JSON.stringify(cards.articles))
                     setKeyword(value)
@@ -364,19 +374,6 @@ function App() {
             })
     }
 
-    function getSawedCards() {
-        if (isLoggedInHeader) {
-            mainApi.getCards()
-                .then((cards) => {
-                    setSawedCards(cards)
-                    setNumberSawedNews(sawedCards.length)
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }
-    }
-
     function deleteArticle(id) {
         mainApi.deleteCard(id)
             .then((res) => {
@@ -402,31 +399,28 @@ function App() {
         if (mySavedArticle) {
             deleteArticle(mySavedArticle._id)
         }
-    }
-
-    React.useEffect(() => {
         getSawedCards()
-    }, [isLoggedInHeader])
+    }
 
     return <Switch>
         <Route exact path="*">
             <CurrentUserContext.Provider value={currentUser}>
                 <section className="page">
                     {renderPage ?
-                        <ProtectedRoute openAuth={handleAuthPopupOpen} path="/sawed-news" loggedIn={isLoggedInHeader}>
+                        <ProtectedRoute path="/sawed-news" loggedIn={isLoggedInHeader}>
                             <SavedNewsHeader onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
                             <Main sawedNews={sawedCards} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
                             {sawedCards.length === 0 ?
                                 <NotFound noSawedCards={true} isVisible={true} />
                                 :
-                                <SavedNews removeCard={handleRemoveCard} keyword={keyword} cards={sawedCards} isLoggedIn={isLoggedInHeader} />
+                                <SavedNews update={getSawedCards} removeCard={handleRemoveCard} keyword={keyword} cards={sawedCards} isLoggedIn={isLoggedInHeader} />
                             }
                         </ProtectedRoute>
                         : ''}
                     <Route path="/" exact>
-                        <Header handleClick={handleClick} isClicked={isClicked} onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
+                        <Header clickSawedNews={getSawedCards} handleClick={handleClick} isClicked={isClicked} onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
                         <Main sawedNews={sawedCards} errorInputSearch={errorInputSearch} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
-                        <NewsCardList notLeggedIn={handleAuthPopupOpen} sawedNews={sawedCards} update={getSawedCards} removeCard={handleRemoveCard} keyword={keyword} cards={cards} isLoggedIn={isLoggedInHeader} isLoadind={stateNewsCardList} />
+                        <NewsCardList getSawedCards={getSawedCards} notLeggedIn={handleAuthPopupOpen} sawedNews={sawedCards} update={getSawedCards} removeCard={handleRemoveCard} keyword={keyword} cards={cards} isLoggedIn={isLoggedInHeader} isLoadind={stateNewsCardList} />
                     </Route>
                     <Preloader isVisible={statePreloader} textLoading="Идет поиск новостей.." />
                     <NotFound noSawedCards={false} isVisible={stateNotFound} />
