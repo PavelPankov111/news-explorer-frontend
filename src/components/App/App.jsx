@@ -349,13 +349,15 @@ function App() {
     }
 
     function getSawedCards() {
-        mainApi.getCards()
+        if(isLoggedInHeader){
+            mainApi.getCards()
             .then((cards) => {
                 setSawedCards(cards)
             })
             .catch((err) => {
                 console.log(err)
             })
+        }
     }
 
     function deleteArticle(id) {
