@@ -51,10 +51,15 @@
     border: none;
     cursor: pointer;
     transition: .1s;
+    display: none;
 }
 
 .newsCardList__button:hover {
     box-shadow: 0 4px 6px -7px rgba(20, 17, 17, 0.1), 0 4px 30px -9px rgba(0, 0, 0, .1);
+}
+
+.newsCardList__button_visible{
+    display: block;
 }
 
 @media screen and (max-width: 1293px) {

@@ -6,8 +6,8 @@ function NotFound(props) {
     return(
         <div className={props.isVisible ? `notFound` : `notFound notFound__disable`}>
             <img className="notFound__image" src={img} alt="ничего не найдено"/>
-            <h2 className="notFound__title">Ничего не найдено</h2>
-            <p className="notFound__description">К сожалению по вашему запросу ничего не найдено.</p>
+            <h2 className="notFound__title">{props.noSawedCards ? `У вас пока нет сохраненых статей` : `Ничего не найдено`}</h2>
+            <p className="notFound__description">{props.noSawedCards ? `` : `К сожалению по вашему запросу ничего не найдено.`} </p>
         </div>
     )
 }

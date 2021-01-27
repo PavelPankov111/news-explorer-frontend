@@ -23,14 +23,14 @@ function PopupWithForm(props) {
 
     return (
         <div onClick={handleOverlayClose} className={`popup ${props.isOpen ? 'popup_opened' : ''} `}>
-            <form ref={pupupRef} /*onSubmit={props.onSubmit}*/ method="get" action="#" className={`popup${props.namePopup}__form`} noValidate>
+            <form ref={pupupRef} onSubmit={props.onSubmit} method="get" action="#" className={`popup${props.namePopup}__form`} noValidate>
                 <button type="reset" className="popup__close-btn" onClick={props.close} >
                     <img className="popup__close-img" src={closeBtn} alt="кнопка закрытия" />
                 </button>
                 <div className={`popup${props.namePopup}__content`}>
                     <h3 className={`popup${props.namePopup}__title`}>{props.title}</h3>
                     {props.children}
-                    {props.showBtn === true ? <button type="submit" className={`popup${props.namePopup}__button popup${props.namePopup}__button-disable`}>
+                    {props.showBtn === true ? <button type="submit" className={props.isButtonDisable ? `popup${props.namePopup}__button popup${props.namePopup}__button-disable` : `popup${props.namePopup}__button`}>
                         {props.titleButton}
                     </button> : ''}
                     <div className={`popup${props.namePopup}__author`}>

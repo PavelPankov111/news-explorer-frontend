@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import myPhoto from '../../images/8_qoG8WEzd4.jpg'
+import myPhoto from '../../images/me.jpg'
 import { Route, Switch } from 'react-router-dom'
 
 

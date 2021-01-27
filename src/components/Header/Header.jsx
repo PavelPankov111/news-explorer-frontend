@@ -9,7 +9,7 @@ function Header(props) {
         <Route path="*" exact>
             <header className={props.isClicked ? `header header_static` : 'header'}>
                 <h1 className="header__title">NewsExplorer</h1>
-                <Navigation click={props.onClickOut} handleClick={props.onClick} loggedIn={props.loggedInHeader} userName={props.userNameHeader} />
+                <Navigation redirectSawedNews={props.handleSawedNews} click={props.onClickOut} handleClick={props.onClick} loggedIn={props.loggedInHeader} userName={props.userNameHeader} />
                 <div onClick={props.handleClick} className={props.isClicked ? `header__mobile header__mobile_active` : `header__mobile`}>
                     <div className={props.isClicked ? `header__mobile-popup header__mobile-popup_active` : `header__mobile-popup`}> 
                      <div className={props.isClicked ? `header__mobile-container header__mobile-container_active` : `header__mobile-container`}></div>

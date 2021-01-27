@@ -5,7 +5,7 @@ function Preloader(props) {
     return (
         <div className={props.isVisible? `preloader` : `preloader__hidden`}>    
             <i className="preloader__icon"></i>
-            <p className="preloader__text">{props.textLoading}</p> : ''
+            <p className="preloader__text">{props.textLoading}</p> 
         </div>
 
     )
