@@ -7,7 +7,7 @@ function Footer() {
             <h3 className="footer__title">© Pankov Pavel</h3>
             <div className="footer__box">
                 <div className="footer__links">
-                    <a className="footer__route" href="*">Главная</a>
+                    <a className="footer__route" href="/">Главная</a>
                     <a className="footer__link" href="https://praktikum.yandex.ru/profile/web/">Яндекс.Практикум</a>
                 </div>
                 <div className="footer__pages">

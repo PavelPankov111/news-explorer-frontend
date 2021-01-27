@@ -43,6 +43,7 @@ function App() {
                 })
                 .catch((err) => {
                     console.log(err)
+                    setIsLoggedInHeader(false)
                 })
         } else {
             setIsLoggedInHeader(false)
@@ -242,7 +243,7 @@ function App() {
     function handleOut() {
         setIsLoggedInHeader(false)
         setCurrentUser({
-            name: 'Имя',
+            name: '',
             email: '',
             password: ''
         })
@@ -389,26 +390,25 @@ function App() {
         getSawedCards()
     }, [isLoggedInHeader])
 
-    return (
+    return <Switch>
+        <Route path="*">
         <CurrentUserContext.Provider value={currentUser}>
             {renderPage ?
                 <section className="page">
-                    <Switch>
-                        <ProtectedRoute path="/sawed-news" loggedIn={isLoggedInHeader}>
-                            <SavedNewsHeader onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
-                            <Main sawedNews={sawedCards} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
-                            {sawedCards.length === 0 ?
-                                <NotFound noSawedCards={true} isVisible={true} />
-                                :
-                                <SavedNews removeCard={handleRemoveCard} keyword={keyword} cards={sawedCards} isLoggedIn={isLoggedInHeader} />
-                            }
-                        </ProtectedRoute>
-                        <Route path="/" exact>
-                            <Header handleClick={handleClick} isClicked={isClicked} onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
-                            <Main sawedNews={sawedCards} errorInputSearch={errorInputSearch} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
-                            <NewsCardList sawedNews={sawedCards} update={getSawedCards} removeCard={handleRemoveCard} keyword={keyword} cards={cards} isLoggedIn={isLoggedInHeader} isLoadind={stateNewsCardList} />
-                        </Route>
-                    </Switch>
+                    <ProtectedRoute path="/sawed-news" loggedIn={isLoggedInHeader}>
+                        <SavedNewsHeader onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
+                        <Main sawedNews={sawedCards} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
+                        {sawedCards.length === 0 ?
+                            <NotFound noSawedCards={true} isVisible={true} />
+                            :
+                            <SavedNews removeCard={handleRemoveCard} keyword={keyword} cards={sawedCards} isLoggedIn={isLoggedInHeader} />
+                        }
+                    </ProtectedRoute>
+                    <Route path="/" exact>
+                        <Header handleClick={handleClick} isClicked={isClicked} onClickOut={handleOut} onClick={handleAuthPopupOpen} loggedInHeader={isLoggedInHeader} userNameHeader={currentUser.name} />
+                        <Main sawedNews={sawedCards} errorInputSearch={errorInputSearch} loggedIn={isLoggedInHeader} inputSearchForm={submitSearchForm} userName={currentUser.name} numberSawedNews={numberSawedNews} />
+                        <NewsCardList sawedNews={sawedCards} update={getSawedCards} removeCard={handleRemoveCard} keyword={keyword} cards={cards} isLoggedIn={isLoggedInHeader} isLoadind={stateNewsCardList} />
+                    </Route>
                     <Preloader isVisible={statePreloader} textLoading="Идет поиск новостей.." />
                     <NotFound noSawedCards={false} isVisible={stateNotFound} />
                     <About />
@@ -442,7 +442,9 @@ function App() {
                 </section>
                 : ''}
         </CurrentUserContext.Provider>
-    )
+        </Route>
+    </Switch>
+
 }
 
 export default App;
