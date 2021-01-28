@@ -1,0 +1,575 @@
+.popup {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: rgba(0, 0, 0, 0);
+    position: fixed;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.popup_opened {
+    display: flex;
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-auth__form {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    width: 430px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6%;
+    position: relative;
+}
+
+.popup__close-btn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    padding: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.01);
+    border: none;
+    outline: none
+}
+
+.popup-auth__content {
+    width: 358px;
+    height: 318px;
+}
+
+.popup-auth__button {
+    background: #2F71E5;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    border-radius: 100px;
+    width: 360px;
+    height: 64px;
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}
+
+.popup-auth__button-disable {
+    background: #E6E8EB;
+    cursor: auto;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.popup-auth__title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 29px;
+}
+
+.popup__close-img {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.popup__close-img:hover {
+    opacity: .6;
+    transition: .2s;
+}
+
+.popup-auth__email-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 10px;
+}
+
+.popup-auth__email {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.popup-auth__password-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 7px;
+}
+
+.popup-auth__password {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding-bottom: 6px;
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.popup-auth__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.popup-auth__author {
+    display: flex;
+    margin-top: 16px;
+}
+
+.popup-auth__or {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    margin: auto;
+}
+
+.popup-auth__route {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #2F71E5;
+    text-decoration: none;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.popup-auth__route:hover {
+    opacity: .8;
+    transition: .2s;
+}
+
+.popup-auth__email-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 16px;
+    visibility: hidden;
+}
+
+.popup-auth__password-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    visibility: hidden;
+}
+
+.popup-auth__password-error_visible{
+    visibility:visible;
+}
+
+.popup-register__form {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    width: 430px;
+    height: 458px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6%;
+    position: relative;
+}
+
+.popup-register__content {
+    width: 358px;
+    height: 396px;
+}
+
+.popup-register__button {
+    background: #2F71E5;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    border-radius: 100px;
+    width: 360px;
+    height: 64px;
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}
+
+.popup-register__button-disable {
+    background: #E6E8EB;
+    cursor: auto;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.popup-register__title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 29px;
+}
+
+.popup-register__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.popup-register__email-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 10px;
+}
+
+.popup-register__email {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.popup-register__email-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 13px;
+    visibility: hidden;
+}
+
+.popup-register__email-error_visible{
+    visibility: visible;
+}
+
+.popup-register__password-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 7px;
+}
+
+.popup-register__password {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.popup-register__password-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 16px;
+    visibility: hidden;
+}
+
+.popup-register__password-error_visible{
+    visibility: visible;
+}
+
+.popup-register__name-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin-bottom: 10px;
+}
+
+.popup-register__name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding-left: 0;
+    width: 358px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.popup-register__name-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 17px;
+    visibility: hidden;
+}
+
+.popup-register__name-error_visible{
+    visibility: visible;
+}
+
+.popup-register__author {
+    display: flex;
+    margin-top: 16px;
+}
+
+.popup-register__or {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    margin: auto;
+}
+
+.popup-register__route {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #2F71E5;
+    text-decoration: none;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.popup-register__route:hover {
+    opacity: .8;
+    transition: .2s;
+}
+
+.popup-successful__form {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    width: 430px;
+    height: 182px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6%;
+    position: relative;
+}
+
+.popup-successful__title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 9px;
+    color: #000000;
+}
+
+.popup-successful__content {
+    width: 315px;
+    height: 88px;
+    margin-left: -41px;
+}
+
+.popup-successful__route {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2F71E5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-successful__route:hover {
+    opacity: .8;
+    transition: .2s;
+}
+
+.popup__input {}
+
+.popup__input:focus {
+    border-bottom: 1px solid black;
+}
+
+.popup-register__submit-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    visibility: hidden;
+}
+
+.popup-register__submit-error_visible{
+    visibility: visible;
+}
+
+@media screen and (max-width: 550px) {
+    .popup_opened {
+        bottom: -425px;
+    }
+    .popup__close-btn {
+        top: -50px;
+        right: -6px;
+    }
+    .popup-auth__form {
+        width: 100%;
+        height: 560px;
+    }
+    .popup-register__form {
+        width: 100%;
+        height: 560px;
+    }
+    .popup-successful__form {
+        height: 560px;
+        width: 100%;
+    }
+    .popup-successful__content {
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .popup-auth__form {
+        height: 104.7%;
+    }
+    .popup_opened {
+        background: rgba(0, 0, 0, 0);
+    }
+    .popup-auth__content {
+        margin-bottom: 1198px;
+        width: 288px;
+    }
+    .popup__close-img {
+        width: 24px;
+        height: 24px;
+    }
+    .popup__input {
+        width: 286px;
+    }
+    .popup-auth__button {
+        width: 288px;
+    }
+    .popup-auth__button-disable {
+        width: 288px;
+    }
+    .popup__close-btn {
+        top: -49px;
+        right: 4px;
+    }
+    .popup-register__form {
+        height: 105%;
+    }
+    .popup-register__content {
+        width: 288px;
+        height: 396px;
+        margin-bottom: 1100px;
+    }
+    .popup-register__button-disable {
+        width: 288px;
+    }
+    .popup-register__button {
+        width: 288px;
+    }
+    .popup-auth__title {
+        margin-bottom: 15px;
+    }
+    .popup-auth__box {
+        margin-bottom: 2px;
+    }
+    .popup-successful__form {
+        height: 104.6%;
+    }
+    .popup-successful__content {
+        margin-bottom: 365%;
+    }
+}
+
+.popup-auth__email-error_visible {
+    visibility: visible;
+}
+
+.popup-register__сonflict-error{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-left: 87px;
+    visibility: hidden;
+}
+
+.popup-register__сonflict-error_visible{
+    visibility: visible;
+}
