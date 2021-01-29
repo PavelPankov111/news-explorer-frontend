@@ -200,8 +200,8 @@
     visibility: hidden;
 }
 
-.popup-auth__password-error_visible{
-    visibility:visible;
+.popup-auth__password-error_visible {
+    visibility: visible;
 }
 
 .popup-register__form {
@@ -295,7 +295,7 @@
     visibility: hidden;
 }
 
-.popup-register__email-error_visible{
+.popup-register__email-error_visible {
     visibility: visible;
 }
 
@@ -333,7 +333,7 @@
     visibility: hidden;
 }
 
-.popup-register__password-error_visible{
+.popup-register__password-error_visible {
     visibility: visible;
 }
 
@@ -371,7 +371,7 @@
     visibility: hidden;
 }
 
-.popup-register__name-error_visible{
+.popup-register__name-error_visible {
     visibility: visible;
 }
 
@@ -470,17 +470,14 @@
     visibility: hidden;
 }
 
-.popup-register__submit-error_visible{
+.popup-register__submit-error_visible {
     visibility: visible;
 }
 
 @media screen and (max-width: 550px) {
-    .popup_opened {
-        bottom: -425px;
-    }
     .popup__close-btn {
         top: -50px;
-        right: -6px;
+        right: 43%;
     }
     .popup-auth__form {
         width: 100%;
@@ -502,13 +499,13 @@
 
 @media screen and (max-width: 390px) {
     .popup-auth__form {
-        height: 104.7%;
+        height: 100.7%;
     }
     .popup_opened {
         background: rgba(0, 0, 0, 0);
     }
     .popup-auth__content {
-        margin-bottom: 1198px;
+        margin-bottom: 558px;
         width: 288px;
     }
     .popup__close-img {
@@ -529,12 +526,12 @@
         right: 4px;
     }
     .popup-register__form {
-        height: 105%;
+        height: 100.7%;
     }
     .popup-register__content {
         width: 288px;
         height: 396px;
-        margin-bottom: 1100px;
+        margin-bottom: 490px;
     }
     .popup-register__button-disable {
         width: 288px;
@@ -560,7 +557,7 @@
     visibility: visible;
 }
 
-.popup-register__сonflict-error{
+.popup-register__сonflict-error {
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -570,6 +567,6 @@
     visibility: hidden;
 }
 
-.popup-register__сonflict-error_visible{
+.popup-register__сonflict-error_visible {
     visibility: visible;
 }

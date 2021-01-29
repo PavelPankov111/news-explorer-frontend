@@ -199,12 +199,8 @@
     .navigation__descriptions-sawed-news {
         display: none;
     }
-    .navigation__auth {}
-}
-
-@media screen and (max-width: 400px) {
     .navigation__auth {
-        width: 288px;
+        width: 100%;
         height: 56px;
         display: flex;
         align-items: center;
