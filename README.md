@@ -7,4 +7,5 @@
 ```javascript
 Для запуска введите команду в корне проекта - npm install
 ```
-### Стэк: React + express + mongoBD
+### Стэк: React + express + mongoBD 
+# https://pavelpankov111.github.io/news-explorer-frontend/
